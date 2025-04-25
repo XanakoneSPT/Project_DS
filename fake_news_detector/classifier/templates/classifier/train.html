@@ -1,0 +1,14 @@
+{% extends 'classifier/base.html' %}
+
+{% block title %}Train Model{% endblock %}
+
+{% block content %}
+<h2>Train AI Model</h2>
+<p>Click the button below to train your fake news detection model.</p>
+<p class="text-warning">Note: This may take some time depending on the size of your dataset.</p>
+
+<form method="post" action="{% url 'train' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Train Model</button>
+</form>
+{% endblock %}

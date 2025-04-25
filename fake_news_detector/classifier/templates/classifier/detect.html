@@ -1,0 +1,21 @@
+{% extends 'classifier/base.html' %}
+
+{% block title %}Detect Fake News{% endblock %}
+
+{% block content %}
+<h2>Detect Fake News</h2>
+<p>Enter the title and content of a news article to analyze:</p>
+
+<form method="post" action="{% url 'detect' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Article Title</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Article Content</label>
+        <textarea class="form-control" id="content" name="content" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze</button>
+</form>
+{% endblock %}

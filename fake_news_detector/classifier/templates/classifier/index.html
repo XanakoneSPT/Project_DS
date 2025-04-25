@@ -1,0 +1,39 @@
+{% extends 'classifier/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Fake News Detection System</h1>
+    <p class="lead">
+        Detect fake news using artificial intelligence and machine learning techniques.
+    </p>
+    <hr class="my-4">
+    <p>This system uses natural language processing and machine learning to analyze news articles and determine if they are likely to be fake or real.</p>
+    <div class="d-flex gap-2">
+        <a class="btn btn-primary btn-lg" href="{% url 'detect' %}" role="button">Detect Fake News</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'train' %}" role="button">Train Model</a>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <h3>How It Works</h3>
+        <p>Our system analyzes various features of news articles including:</p>
+        <ul>
+            <li>Language patterns and word usage</li>
+            <li>Source credibility</li>
+            <li>Content consistency</li>
+            <li>Emotional language and sensationalism</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h3>About This Project</h3>
+        <p>This fake news detection system was developed as a data science project using:</p>
+        <ul>
+            <li>Python & Django for the web application</li>
+            <li>Scikit-learn for machine learning</li>
+            <li>Natural Language Processing techniques</li>
+            <li>TF-IDF vectorization</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

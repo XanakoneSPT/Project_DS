@@ -1,0 +1,27 @@
+{% extends 'classifier/base.html' %}
+
+{% block title %}Analysis Result{% endblock %}
+
+{% block content %}
+<h2>Analysis Result</h2>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h3>{{ title }}</h3>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{ content|truncatewords:50 }}</p>
+    </div>
+</div>
+
+<div class="alert {% if is_fake %}alert-danger{% else %}alert-success{% endif %} mb-4">
+    <h4 class="alert-heading">
+        {% if is_fake %}This article is likely FAKE!{% else %}This article appears to be REAL.{% endif %}
+    </h4>
+    <p>Confidence: {{ confidence|floatformat:2 }}%</p>
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'detect' %}" class="btn btn-primary">Analyze Another Article</a>
+</div>
+{% endblock %}
